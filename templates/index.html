@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple PMS</title>
+</head>
+<body>
+    <h1>Project Management System</h1>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Project Name" required>
+        <button type="submit">Add Project</button>
+    </form>
+    <ul>
+        {% for project in projects %}
+        <li>{{ project[1] }} <a href="/delete/{{ project[0] }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
